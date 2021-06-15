@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Funcion Docencia</title>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    
+     <input type="hidden" id="Operacion" value="I"> 
+    
+<div class="container-fluid">
+    
+  <h1>Función Docencia</h1>
+    <p>7 Variable: Profesores</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;a. Dimension: recursos  humanos</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;b. Dimensión: Planes de perfeccionamiento docente.</p>
+    <br><br>
+    <p>a. Dimensión: Matriculación</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;1. a) Cantidad de alumnos de la carrera, discriminados por año y por sexo.</p>
+</div>
+    <br>
+<div class="container-fluid">
+    
+   <form class="row row-cols-lg-auto g-5 align-items-center">
+
+  <div class="col-12">
+    
+      <label for="inputCity" class="form-label">Carrera</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Seleccionar</option>
+      <option value="1">C1</option>
+      <option value="2">C2</option>
+      <option value="3">C3</option>
+      <option value="3">C4</option>
+    </select>
+  </div>
+
+  <div class="col-12">
+
+      <label for="inputCity" class="form-label">Especialidad</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Seleccionar</option>
+      <option value="1">Uno</option>
+      <option value="2">Dos</option>
+      <option value="3">Tres</option>
+    </select>
+  </div>
+       
+ <div class="col-12">
+
+     <label for="inputCity" class="form-label">Año</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Seleccionar</option>
+      <option value="2">2017</option>
+      <option value="3">2018</option>
+      <option value="1">2019</option>
+      <option value="1">2020</option>
+      <option value="1">2021</option>
+    </select>
+</div>
+       
+<div class="col-12">
+
+    <label for="inputCity" class="form-label">Sexo</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Seleccionar</option>
+      <option value="1">Masculino</option>
+      <option value="2">Femenino</option>
+      <option value="3">Prefiero no especificar</option>
+    </select>
+</div>
+
+<div class="col-12">
+    <label for="inputCity" class="form-label">Cantidad</label>
+    <input type="text" class="form-control" id="inputCity">
+</div>   
+  <div class="col-12">
+        <br>
+         &nbsp;
+         &nbsp;
+         &nbsp;
+         &nbsp;
+    <button type="submit" class="btn btn-primary">Add</button>
+  </div>
+</form>
+
+</div>
+
+    <br>
+    <div class="container-fluid">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;b) Relacion de inscriptos e ingresados (ultimos cinco años)</p>
+        <br>
+        
+         <form class="row row-cols-lg-auto g-5 align-items-center class="form-responsive-sm"">  
+             
+             <div class="sm-1">
+                <label for="txtAño" class="col-sm-2 col-form-label">Año</label>
+                <div class="col-mb-3">
+                  <input type="text" class="form-control" id="txtAño">
+                </div>
+              </div>
+             
+             <div class="sm-1">
+                <label for="txtInscriptos" class="col-sm-2 col-form-label">Inscriptos</label>
+                <div class="col-mb-3">
+                  <input type="text" class="form-control" id="txtInscriptos">
+                </div>
+             </div>
+             
+             <div class="sm-1">
+                <label for="txtIngresados" class="col-sm-2 col-form-label">Ingresados</label>
+                <div class="col-mb-3">
+                  <input type="text" class="form-control" id="txtIngresados">
+                </div>
+             </div>
+             
+
+        </form>
+             <div class="col-sm-12">
+              <br>
+            <button type="submit" onclick="registrarInscriptos();" class="btn btn-primary">Agregar</button>
+             </div>
+         <hr>
+        <table id="tableInscriptos" class="table table-hover table-dark table-responsive-sm">
+          <thead>
+            <tr>
+              <th scope="col">Año</th>
+              <th scope="col">Inscriptos</th>
+              <th scope="col">Ingresados</th>
+              <th scope="col">Opción</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+  
+  </div>
+
+    <br>
+    <div class="container-fluid">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;c) Promedio general de alumnos por docentes (incluye docentes militares y civiles)</p>
+        <br>
+        
+        <form class="row row-cols-lg-auto g-5 align-items-center">
+
+          <div class="col-12">
+
+              <label for="txtDocente" class="form-label">Docente</label>
+            <select class="form-select" id="txtDocente">
+              <option selected>Seleccionar</option>
+              <option value="1">Docente 1</option>
+              <option value="2">Docente 2</option>
+              <option value="3">Docente 3</option>
+              <option value="3">Docente 4</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+
+              <label for="txtMateria" class="form-label">Materia</label>
+            <select class="form-select" id="txtMateria">
+              <option selected>Seleccionar</option>
+              <option value="1">Mat 1</option>
+              <option value="2">Mat 2</option>
+              <option value="3">Mat 3</option>
+            </select>
+          </div>
+
+        <div class="col-12">
+            <label for="txtCantAlum" class="form-label">Cantidad de Alumnos</label>
+            <input type="text" class="form-control" id="txtCantAlum">
+        </div>   
+
+        <div class="col-12">
+
+            <label  for="txtCurso" class="form-label">Curso</label>
+            <select class="form-select" id="txtCurso">
+              <option selected>Seleccionar</option>
+              <option value="1">Curso 1</option>
+              <option value="2">Curso 2</option>
+              <option value="3">Curso 3</option>
+            </select>
+        </div>
+
+
+        </form>
+
+             <div class="col-sm-12">
+              <br>
+            <button type="submit" onclick="registrarCurso();" class="btn btn-primary">Agregar</button>
+             </div>
+         <hr>
+        <table id="tableCurso" class="table table-hover table-dark table-responsive-sm">
+          <thead>
+            <tr>
+              <th scope="col">Docente</th>
+              <th scope="col">Materia / Catedra</th>
+              <th scope="col">Cantidad de Alumnos</th>
+              <th scope="col">Curso</th>
+              <th scope="col">Opción</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+  
+  </div>
+
+    
+    
+    <br>
+      <div class="container-fluid">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;d) Promedio general de alumnos por curso y catedra</p>
+            <br>
+        <div class="col-3">
+          
+            <input type="text" class="form-control" id="txtCantAlum">
+        </div>   
+
+<br><br>
+      </div>
+    
+      <div class="container-fluid">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;b. Dimensión: Grado de satisfaccion  (ver gobierno ygestión)</p>
+            <br>
+    
+      </div>
+    <br><br>
+    <div class="container-fluid">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;9. Variable: Planeamiento Educativo.</p>
+            <br>
+       
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Dimension: organizacion curricular</p>
+            <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a) Descripción de la organización curricular de la carrera.</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+        
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b) Descripcion de las estragtegias empleadas para la construccion del pryecto de catedra.</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+        
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Dimension: Fundamentación y actualizacion de la oferta.</p>
+            <br>
+        
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.a) Descripcion de los procedimientos de la revision de la vigencia.</p>
+            <br>
+        
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <br>
+        
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.b)</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <br>
+        
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.c)</p>
+            <br>
+        
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <br>
+        
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.d)</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        <br><br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;10. Variable: Proyecto curricular</p>
+            <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a.1.a)</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        
+        <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a.1.b)</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.1.a)</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.1.b)</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.1.c)</p>
+            <br>
+            
+            <div class="mb-3">
+              
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+         <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.1.a)</p>
+            <br>
+        
+        
+        
+        
+        
+        
+      </div>
+    
+    
+    <div class="container-fluid">
+      <form class="row row-cols-lg-auto g-5 align-items-center">
+          
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupFile01">Carrera 1</label>
+          <input type="file" class="form-control" id="inputGroupFile01">
+        </div>
+    
+                  <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupFile01">Carrera 2</label>
+          <input type="file" class="form-control" id="inputGroupFile01">
+        </div>
+          
+                  <div class="input-group mb-3">
+          <label class="input-group-text" for="inputGroupFile01">Carrera 3</label>
+          <input type="file" class="form-control" id="inputGroupFile01">
+        </div>
+      </form>
+        
+    </div>
+    
+    
+    <!-- Optional JavaScript; choose one of the two!
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <!--  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    
+    -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
+
+    <!-- 
+        <h1>M/F 
+        //2015	33	20	borrar
+        2016	33	20	borrar
+        2017	33	20	borrar
+        2018	33	20	borrar
+        2019	33	20	borrar
+
+        docente	materia/catedra	cant_alum	curso	borrar
+        docente	materia	44	1ro	borrar
+        docente	materia	44	2do	borrar
+         2000caracteres 2000caracteres 2000caracteres 2000caracteres 2000caracteres 500caracteres 500caracteres 500caracteres 500caracteres 500caracteres 500caracteres 500caracteres 500caracteres 500caracteres 500caracteres adjuntar adjuntar adjuntar adjuntar adjuntar adjuntar adjuntar adjuntar 
+        Aula	Cantidad	adf	fasdf	fdagsdf	adsfasd
+        Laboratorio	Cantidad	adf	fasdf	fdagsdf	adsfasd
+        Dimensión	Cantidad	adf	fasdf	fdagsdf	adsfasd
+        Dimensión	Cantidad	adf	fasdf	fdagsdf	adsfasd
+         Agregar </h1>
+     -->
